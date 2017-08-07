@@ -1,4 +1,6 @@
-node('java') {
+pipeline {
+
+  stages {
 
   stage('Configure') {
     env.PATH = "${tool 'maven-3.3.9'}/bin:${env.PATH}"
@@ -16,4 +18,5 @@ node('java') {
     junit allowEmptyResults: true, testResults: '**/target/**/TEST*.xml'
   }
 
+}
 }
