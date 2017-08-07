@@ -17,10 +17,6 @@ pipeline {
         }
 
 
-  stage('Checkout') {
-    sh 'git clone https://github.com/zakeer-fissionhq/spring-boot-sample.git'
-  }
-
   stage('Build') {
     sh 'mvn -B -V -U -e clean package'
   }
