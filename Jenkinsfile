@@ -18,7 +18,7 @@ pipeline {
 
 
   stage('Checkout') {
-    git clone 'https://github.com/zakeer-fissionhq/spring-boot-sample.git'
+    sh 'git clone https://github.com/zakeer-fissionhq/spring-boot-sample.git'
   }
 
   stage('Build') {
