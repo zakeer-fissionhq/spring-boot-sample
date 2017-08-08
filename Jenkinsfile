@@ -11,7 +11,8 @@ pipeline {
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
                     echo "JAVA_HOME=${JAVA_HOME}"
-                    sh 'export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk'
+                    echo 'export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk'
+                    
                     
                      echo "JAVA_HOME=${JAVA_HOME}"
                     // next 2 are equivalents
