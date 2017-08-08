@@ -11,11 +11,11 @@ pipeline {
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
                     echo "JAVA_HOME=${JAVA_HOME}"
-                    env.JAVA_HOME="${tool '/usr/lib/jvm/jre-1.8.0-openjdk'}"
+                    sh 'export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk'
                     
-                    echo "$JAVA_HOME"
+                     echo "JAVA_HOME=${JAVA_HOME}"
                     // next 2 are equivalents
-                    sh "${jdk}/bin/java -version"
+                    sh "${JAVA_HOME}/bin/java -version"
                     env.PATH="${env.JAVA_HOME}/bin:${env.PATH}"
                     sh 'java -version'
                 '''
