@@ -10,7 +10,7 @@ pipeline {
         stage ('Initialize') {
             steps {
                 sh '''
-                
+                    export "PATH=/usr/lib/jvm/jre-1.8.0-openjdk:${PATH}"
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"                    
                 '''
