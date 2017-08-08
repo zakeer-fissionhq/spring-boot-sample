@@ -10,7 +10,11 @@ pipeline {
                 sh '''
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
-                    env.JAVA_HOME="${tool 'jdk-8u45'}"
+                    jdk = tool name: '/usr/lib/jvm/jre-1.8.0-openjdk'
+                    env.JAVA_HOME = "${jdk}"
+                    echo "jdk installation path is: ${jdk}"
+                    // next 2 are equivalents
+                    sh "${jdk}/bin/java -version"
                     env.PATH="${env.JAVA_HOME}/bin:${env.PATH}"
                     sh 'java -version'
                 '''
