@@ -16,6 +16,8 @@ pipeline {
 
         stage ('Build') {
             steps {
+                sh 'source /etc/profile'
+                sh 'echo "JAVA_HOME=$JAVA_HOME"'
                 sh 'mvn -Dmaven.test.failure.ignore=true install -X' 
             }
           
