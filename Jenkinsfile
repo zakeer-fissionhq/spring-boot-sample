@@ -7,7 +7,7 @@ pipeline {
         stage ('Initialize') {
             steps {
                 sh '''
-                    export "PATH=/usr/lib/jvm/jre-1.8.0-openjdk:${PATH}"
+                    sh 'echo "JAVA_HOME=$JAVA_HOME"'
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"                    
                 '''
@@ -16,8 +16,8 @@ pipeline {
 
         stage ('Build') {
             steps {
-                sh 'source /etc/profile'
-                sh 'echo "JAVA_HOME=$JAVA_HOME"'
+               
+               
                 sh 'mvn -Dmaven.test.failure.ignore=true install -X' 
             }
           
