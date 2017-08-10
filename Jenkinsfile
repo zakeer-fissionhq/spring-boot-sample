@@ -7,7 +7,8 @@ pipeline {
          stage ('Initialize') {
             steps {
                 sh '''
-                    export "PATH=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.141-2.6.10.1.el7:${PATH}"
+                    export "JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.141-2.6.10.1.el7"
+                    export "PATH=${JAVA_HOME}:${PATH}"
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"                    
                 '''
