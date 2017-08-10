@@ -17,8 +17,8 @@ pipeline {
 
         stage ('Build') {
             steps {
-                export "JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.141-2.6.10.1.el7"
-                export "PATH=${JAVA_HOME}:${PATH}"
+                sh 'export "JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.141-2.6.10.1.el7"'
+                sh 'export "PATH=${JAVA_HOME}:${PATH}"'
                 sh 'echo "JAVA_HOME=$JAVA_HOME"'
                 sh 'mvn -Dmaven.test.failure.ignore=true install -X' 
             }
